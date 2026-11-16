@@ -1,0 +1,58 @@
+[auth]
+backend = "sql"
+secret = "SECRET"
+secure_cookies = false
+
+[database]
+url = "sqlite:data.db"
+
+[ldap]
+url = "ldap://127.0.0.1:389"
+starttls = true
+service_dn = "cn=freenit,dc=service,dc=ldap"
+service_password = ""
+user_base = "dc=account,dc=ldap"
+role_base = "dc=group,dc=ldap"
+user_classes = ["pilotPerson", "posixAccount", "omemoPerson"]
+group_classes = ["posixGroup"]
+role_classes = ["groupOfUniqueNames"]
+role_member_attr = "uniqueMember"
+user_member_attr = "memberOf"
+user_omemo_attr = "omemoBundle"
+uid_next_dn = "cn=uidnext,dc=ldap"
+uid_next_class = "uidNext"
+uid_next_field = "uidNumber"
+gid_next_dn = "cn=gidnext,dc=ldap"
+gid_next_class = "gidNext"
+gid_next_field = "gidNumber"
+
+[stalwart]
+url = "http://127.0.0.1:8080"
+admin = "admin"
+password = ""
+
+[sieve]
+port = 4190
+security = "none"
+
+[calendar]
+protocol = "jmap"
+
+[contacts]
+protocol = "jmap"
+
+[files]
+
+[mail]
+server = "mail.example.com"
+port = 587
+user = "user@example.com"
+password = ""
+tls = true
+from = "no-reply@mail.com"
+
+[jabber]
+ws_url = ""
+
+[logging]
+level = "info"
